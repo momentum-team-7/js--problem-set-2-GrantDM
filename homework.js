@@ -125,18 +125,7 @@ function selectionSort(array) {
 // For example, `textList(['Cadence', 'Ordel', 'Marion'])` results in the string
 // `"Cadence,Ordel,Marion"`.
 
-function textList(list, name) {
-    let newList = list.slice()
-    while (newList.includes(name))
-        newList.push()
-}
-
-// function remove(people, person) {
-//     let newArray = people.slice()      
-//     while (newArray.includes(person)) {
-//         let position = newArray.indexOf(person)
-//         newArray.splice(position, 1)
-//     }
-//     return newArray
-// }
-
+function textList(names) {
+    names.toString()
+    return names
+};
