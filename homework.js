@@ -85,20 +85,38 @@ function minimum(numbers) {
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
 
-function selectionSort(numbers, numbersSorted) {
-    // let index = 0
-    let solution = null
-    for (let smallest of numbers) {
-        if (solution === null || smallest < solution) 
-            solution = smallest
+function selectionSort(array) {
+    // var  newArray = array.length
+    for (let index = 0; index < array.length; index++) {
+        let small = index
+        for (let j = index + 1; j < array.length; j++) {
+            if (array[j] < array[small]) {
+                small = j
+            }
+        }
+        if (index !== small) {
+            let swap = array[index]
+            array[index] = array[small]
+            array[small] = swap
+        }
     }
-    let smallestNum = numbers.slice()
-    while (smallestNum !== 0) {
-        numbersSorted.push(smallest)
-        smallestNum.splice(smallest, 1)
-    }
-    return numbersSorted
-};    
+    return array
+};
+
+// function selectionSort(numbers, numbersSorted) {
+//     // let index = 0
+//     let solution = null
+//     for (let smallest of numbers) {
+//         if (solution === null || smallest < solution) 
+//             solution = smallest
+//     }
+//     var smallestNum = numbers.slice()
+//     while (smallestNum !== 0) {
+//         numbersSorted.push(smallest)
+//         smallestNum.splice(smallest, 1)
+//     }
+//     return numbersSorted
+// }; 
 
 
 // 7. Create a function called `textList` that takes an array and joins its elements
